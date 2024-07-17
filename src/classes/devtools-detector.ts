@@ -14,6 +14,7 @@ export class DevtoolsDetector {
   private _detectLoopStopped = true;
   private _detectLoopDelay = 500;
   private _timer!: any;
+  private _alertEverytime: boolean = false;
 
   constructor({ checkers }: DetectorOptions) {
     this._checkers = checkers.slice();
@@ -49,6 +50,10 @@ export class DevtoolsDetector {
 
   setDetectDelay(value: number) {
     this._detectLoopDelay = value;
+  }
+
+  setAlertEverytime(value: boolean) {
+    this._alertEverytime = value;
   }
 
   async detectOnce() {
@@ -110,7 +115,7 @@ export class DevtoolsDetector {
       }
     }
 
-    if (isOpen != this._isOpen) {
+    if (isOpen != this._isOpen || this._alertEverytime) {
       this._isOpen = isOpen;
       this._broadcast({
         isOpen,
