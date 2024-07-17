@@ -3,7 +3,7 @@
     "typescript": "^5.5.3"
   },
   "name": "@leventeszucs/devtools-detect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Detects if devTools is open.",
   "main": "build/index.js",
   "scripts": {
