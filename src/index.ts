@@ -43,6 +43,10 @@ export function setDetectDelay(time: number) {
   defaultDetector.setDetectDelay(time);
 }
 
+export function setAlertEverytime(value: boolean) {
+  defaultDetector.setAlertEverytime(value);
+}
+
 export default defaultDetector;
 
 export { DevtoolsDetail } from './types/devtools-detail.type.js';
